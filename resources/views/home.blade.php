@@ -19,7 +19,7 @@
     <header>
         <ul>
             @foreach ($headerLink as $link)
-                <li><a href="">{{ $link }}</a></li>
+                <li><a href="{{$link['href']}}">{{ $link['name'] }}</a></li>
             @endforeach
         </ul>
     </header>

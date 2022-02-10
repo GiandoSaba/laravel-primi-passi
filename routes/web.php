@@ -1,5 +1,6 @@
 <?php
 
+use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,11 +17,33 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $data = [
         'headerLink' => [
-            'Home',
-            'Contatti',
-            'Info',
-            'Acquista Ora'
+            [
+                'name' => 'Home',
+                'href' => '/',
+            ],
+            [
+                'name' => 'Contatti',
+                'href' => '/contatti',
+            ],
+            [
+                'name' => 'Info',
+                'href' => '/info',
+            ],
+            [
+                'name' => 'Acquista Ora',
+                'href' => '/buy',
+            ]
         ]
     ];
     return view('home', $data);
+});
+
+Route::get('/contatti', function () {
+    return view('contatti');
+});
+Route::get('/info', function () {
+    return view('info');
+});
+Route::get('/buy', function () {
+    return view('buy');
 });
