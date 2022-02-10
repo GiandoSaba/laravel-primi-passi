@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $data = [
+        'headerLink' => [
+            'Home',
+            'Contatti',
+            'Info',
+            'Acquista Ora'
+        ]
+    ];
+    return view('home', $data);
 });
